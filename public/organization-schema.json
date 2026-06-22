@@ -1,0 +1,34 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "AMEY EXIM",
+  "url": "https://amey-exim.com",
+  "logo": "https://amey-exim.com/amey-exim-logo.png",
+  "description": "Global exporter of pharmaceutical, agricultural, and cosmetic products",
+  "sameAs": [
+    "https://www.linkedin.com/company/amey-exim",
+    "https://www.facebook.com/ameyexim",
+    "https://www.twitter.com/ameyexim"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Export Excellence Boulevard",
+    "addressLocality": "Global",
+    "postalCode": "000000",
+    "addressCountry": "IN"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+91-1234-567-890",
+    "contactType": "Sales"
+  },
+  "foundingDate": "2010",
+  "numberOfEmployees": "500+",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "ratingCount": "250",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
+}
