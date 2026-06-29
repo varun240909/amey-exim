@@ -6,8 +6,6 @@ import { BentoCard } from "@/components/ui/bento-card";
 import { useInView } from "@/hooks/use-animations";
 import { useEffect, useRef, useState } from "react";
 
-
-
 // ─── Marquee-style scrolling ticker for certification badges ─────────────────
 function CertificationTicker({ certs }: { certs: string[] }) {
   const doubled = [...certs, ...certs]; // duplicate for seamless loop
@@ -126,6 +124,11 @@ const divisions = [
 const certs = ["FDA", "WHO", "ISO 9001", "GMP", "Fair Trade", "ISO 22000", "EMA Compliant", "FSSC 22000"];
 
 export default function DivisionsPage() {
+  // ── Extract Icon components into uppercase variables so JSX can render them ──
+  const PharmaIcon = divisions[0].Icon;
+  const AgriIcon = divisions[1].Icon;
+  const CosmeticIcon = divisions[2].Icon;
+
   return (
     <main>
       {/* ─── Intro ─────────────────────────────────────────────────────── */}
@@ -170,7 +173,7 @@ export default function DivisionsPage() {
           >
             <div className="flex flex-col justify-end h-full gap-4">
               <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white/10 border border-white/20">
-                <divisions[0].Icon size={20} className="text-accent" strokeWidth={1.5} />
+                <PharmaIcon size={20} className="text-accent" strokeWidth={1.5} />
               </div>
               <span className="self-start rounded-full bg-accent/20 px-3 py-1 text-xs font-medium uppercase tracking-widest text-accent">
                 {divisions[0].badge}
@@ -210,7 +213,7 @@ export default function DivisionsPage() {
           >
             <div className="flex flex-col justify-end h-full gap-3">
               <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-white/10 border border-white/20">
-                <divisions[1].Icon size={18} className="text-accent" strokeWidth={1.5} />
+                <AgriIcon size={18} className="text-accent" strokeWidth={1.5} />
               </div>
               <span className="self-start rounded-full bg-accent/20 px-3 py-1 text-xs font-medium uppercase tracking-widest text-accent">
                 {divisions[1].badge}
@@ -239,7 +242,7 @@ export default function DivisionsPage() {
           >
             <div className="flex flex-col justify-end h-full gap-3">
               <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-white/10 border border-white/20">
-                <divisions[2].Icon size={18} className="text-accent" strokeWidth={1.5} />
+                <CosmeticIcon size={18} className="text-accent" strokeWidth={1.5} />
               </div>
               <span className="self-start rounded-full bg-accent/20 px-3 py-1 text-xs font-medium uppercase tracking-widest text-accent">
                 {divisions[2].badge}
