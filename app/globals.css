@@ -273,3 +273,77 @@ html, body {
 .animate-fade-in {
   animation: fadeIn 0.7s ease-out forwards;
 }
+
+/* ─── Text mask reveal (heading slide-up from behind clip) ─── */
+@keyframes textMaskReveal {
+  from {
+    clip-path: inset(0 0 100% 0);
+    opacity: 0;
+  }
+  to {
+    clip-path: inset(0 0 0% 0);
+    opacity: 1;
+  }
+}
+
+.animate-text-reveal {
+  animation: textMaskReveal 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  opacity: 0;
+}
+
+/* ─── Line draw (horizontal rule expands left→right) ─── */
+@keyframes lineDraw {
+  from { transform: scaleX(0); transform-origin: left; }
+  to   { transform: scaleX(1); transform-origin: left; }
+}
+
+.animate-line-draw {
+  animation: lineDraw 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  transform-origin: left;
+}
+
+/* ─── Shimmer sweep for loading/stat cards ─── */
+@keyframes shimmer {
+  from { background-position: -200% center; }
+  to   { background-position: 200% center; }
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--muted) 25%,
+    var(--secondary) 50%,
+    var(--muted) 75%
+  );
+  background-size: 200% auto;
+  animation: shimmer 1.8s linear infinite;
+}
+
+/* ─── Border pulse glow (CTA / accent tiles) ─── */
+@keyframes borderGlow {
+  0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 0%, transparent); }
+  50%       { box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 20%, transparent); }
+}
+
+.animate-border-glow {
+  animation: borderGlow 3s ease-in-out infinite;
+}
+
+/* ─── Prefers-reduced-motion: disable all custom animations ─── */
+@media (prefers-reduced-motion: reduce) {
+  .animate-text-reveal,
+  .animate-line-draw,
+  .animate-shimmer,
+  .animate-border-glow,
+  .animate-float,
+  .animate-reveal-up,
+  .animate-reveal-left,
+  .animate-reveal-right,
+  .animate-scale-in,
+  .animate-fade-in {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+  }
+}

@@ -153,7 +153,7 @@ export function HeroSection() {
               style={{
                 width: `${centerWidth}%`,
                 height: `${centerHeight}%`,
-                flex: "0 0 auto",
+                   flex: "0 0 auto",
                 borderRadius: `${borderRadius}px`,
               }}
             >
@@ -166,7 +166,7 @@ export function HeroSection() {
                 className="h-full w-full object-cover"
                 poster="/images/hero-video-poster.png"
               >
-                <source src="https://api.descript.com/v2/published_projects/7cd76bc2-5969-4332-987d-3cf5a336235e/hls?expiration=1782259199999&signature=f44757e2dabb5f3df3abb023d3d7e3e8cf1cc73df697ce75bb53cfaa4c0531d2" type="video/mp4" />
+                <source src="https://res.cloudinary.com/dozdgvgbt/video/upload/v1782707869/AMEY_EXIM_Hero_Video_mmbupd.mp4" type="video/mp4" />
               </video>
 
               {/* Audio mute/unmute toggle */}
